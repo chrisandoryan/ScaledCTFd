@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   traefik:
     image: traefik
@@ -85,5 +85,5 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: "./data/CTFd/themes"
+      device: "${PWD}/data/CTFd/themes"
       o: bind
