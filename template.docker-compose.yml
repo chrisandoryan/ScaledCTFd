@@ -36,6 +36,11 @@ services:
     environment:
       - SQLALCHEMY_MAX_OVERFLOW=100
       - REVERSE_PROXY=true
+      - DATABASE_URL=mysql+pymysql://ctfd:change_me_please@db/ctfd
+      - REDIS_URL=redis://cache:6379
+    volumes:
+      - ./data/CTFd/logs:/var/log/CTFd
+      - ./data/CTFd/uploads:/var/uploads
     deploy:
       replicas: 2
       labels:
@@ -50,11 +55,11 @@ services:
       - ctfd-traefik-network
 
   db:
-    image: mariadb:10.4.12
+    image: mariadb:10.11
     environment:
       - MYSQL_ROOT_PASSWORD=ctfd
       - MYSQL_USER=ctfd
-      - MYSQL_PASSWORD=ctfd
+      - MYSQL_PASSWORD=change_me_please
       - MYSQL_DATABASE=ctfd
     volumes:
       - ./data/mysql:/var/lib/mysql
