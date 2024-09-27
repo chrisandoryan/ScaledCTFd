@@ -58,7 +58,7 @@ services:
   db:
     image: mariadb:10.11
     environment:
-      - MYSQL_ROOT_PASSWORD=ctfd
+      - MYSQL_ROOT_PASSWORD=change_me_please
       - MYSQL_USER=ctfd
       - MYSQL_PASSWORD=change_me_please
       - MYSQL_DATABASE=ctfd
