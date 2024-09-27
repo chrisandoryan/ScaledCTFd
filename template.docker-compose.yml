@@ -39,10 +39,11 @@ services:
       - DATABASE_URL=mysql+pymysql://ctfd:change_me_please@db/ctfd
       - REDIS_URL=redis://cache:6379
       - LOG_FOLDER=/var/log/CTFd
+      - UPLOAD_FOLDER=/var/uploads
     volumes:
       - ./data/CTFd/logs:/var/log/CTFd
       - ./data/CTFd/uploads:/var/uploads
-      - ctfd_corebeta_themes:/opt/CTFd/CTFd/themes/core-beta
+      - ctfd_corebeta_themes:/opt/CTFd/CTFd/themes/core-beta # Uncomment to enable custom CTFd themes
     deploy:
       replicas: 2
       labels:
@@ -85,5 +86,5 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: "${PWD}/data/CTFd/themes"
+      device: "${PWD}/data/CTFd/themes/core-beta"
       o: bind
