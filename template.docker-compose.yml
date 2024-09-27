@@ -42,7 +42,7 @@ services:
     volumes:
       - ./data/CTFd/logs:/var/log/CTFd
       - ./data/CTFd/uploads:/var/uploads
-      - ctfd_themes:/opt/CTFd/CTFd/themes
+      - ctfd_corebeta_themes:/opt/CTFd/CTFd/themes/core-beta
     deploy:
       replicas: 2
       labels:
@@ -81,7 +81,7 @@ networks:
     external: true
 
 volumes:
-  ctfd_themes:
+  ctfd_corebeta_themes:
     driver: local
     driver_opts:
       type: none
