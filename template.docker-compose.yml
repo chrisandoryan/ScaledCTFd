@@ -38,6 +38,7 @@ services:
       - REVERSE_PROXY=true
       - DATABASE_URL=mysql+pymysql://ctfd:change_me_please@db/ctfd
       - REDIS_URL=redis://cache:6379
+      - LOG_FOLDER=/var/log/CTFd
     volumes:
       - ./data/CTFd/logs:/var/log/CTFd
       - ./data/CTFd/uploads:/var/uploads
