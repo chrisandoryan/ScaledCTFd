@@ -42,7 +42,7 @@ services:
     volumes:
       - ./data/CTFd/logs:/var/log/CTFd
       - ./data/CTFd/uploads:/var/uploads
-      - ./data/CTFd/themes:/opt/CTFd/CTFd/themes
+      - ctfd_themes:/opt/CTFd/CTFd/themes
     deploy:
       replicas: 2
       labels:
@@ -79,3 +79,11 @@ services:
 networks:
   ctfd-traefik-network:
     external: true
+
+volumes:
+  ctfd_themes:
+    driver: local
+    driver_opts:
+      type: none
+      device: "./data/CTFd/themes"
+      o: bind
