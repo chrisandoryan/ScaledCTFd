@@ -42,6 +42,7 @@ services:
     volumes:
       - ./data/CTFd/logs:/var/log/CTFd
       - ./data/CTFd/uploads:/var/uploads
+      - ./data/CTFd/themes:/opt/CTFd/CTFd/themes
     deploy:
       replicas: 2
       labels:
