@@ -45,7 +45,7 @@ services:
       - ./data/CTFd/uploads:/var/uploads
       - ctfd_corebeta_themes:/opt/CTFd/CTFd/themes/core-beta # Uncomment to enable custom CTFd themes
     deploy:
-      replicas: 2
+      replicas: 1
       labels:
         - traefik.enable=true
         - traefik.http.routers.ctfd.rule=Host(`ctfd.idcyberskills.com`)
